@@ -22,11 +22,17 @@ import { AuthGuard } from "./guards/auth";
 import { GuestGuard } from "./guards/guest";
 import { authLoader } from "./loaders/auth";
 
+// TODO: MASOOD
+import { AutologinPage } from "../pages/autologin/page";
+
 export const routes = createRoutesFromElements(
   <Route element={<Providers />}>
     <Route element={<HomeLayout />}>
       <Route path="/" element={<HomePage />} />
     </Route>
+
+    {/* TODO: MASOOD */}
+    <Route path="autologin/:userId/:resumeId" element={<AutologinPage />} />
 
     <Route path="auth">
       <Route element={<AuthLayout />}>

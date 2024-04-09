@@ -5,6 +5,7 @@ import {
   Get,
   HttpCode,
   InternalServerErrorException,
+  Param,
   Patch,
   Post,
   Query,
@@ -39,14 +40,16 @@ import { RefreshGuard } from "./guards/refresh.guard";
 import { TwoFactorGuard } from "./guards/two-factor.guard";
 import { getCookieOptions } from "./utils/cookie";
 import { payloadSchema } from "./utils/payload";
+import { UserService } from "../user/user.service";
 
 @ApiTags("Authentication")
 @Controller("auth")
 export class AuthController {
   constructor(
     private readonly authService: AuthService,
+    private readonly userService: UserService, // TODO: MASOOD
     private readonly utils: UtilsService,
-  ) {}
+  ) { }
 
   private async exchangeToken(id: string, email: string, isTwoFactorAuth = false) {
     try {
@@ -91,6 +94,16 @@ export class AuthController {
 
     if (redirect) response.redirect(redirectUrl.toString());
     else response.status(200).send(responseData);
+  }
+
+  // TODO: MASOOD
+  @Post("autologin/:userId/:resumeId")
+  async autologin(
+    @Param("userId") userId: string,
+    @Res({ passthrough: true }) response: Response
+  ) {
+    const user = await this.userService.findOneById(userId);
+    return this.handleAuthenticationResponse(user as any, response);
   }
 
   @Post("register")

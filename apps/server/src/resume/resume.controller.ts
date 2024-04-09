@@ -14,12 +14,21 @@ import {
 import { ApiTags } from "@nestjs/swagger";
 import { User as UserEntity } from "@prisma/client";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
-import { CreateResumeDto, ImportResumeDto, ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
+
+// TODO: MASOOD
+import { CreateResumeDto, ImportResumeDto, RegisterDto, ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
+
 import { resumeDataSchema } from "@reactive-resume/schema";
 import { ErrorMessage } from "@reactive-resume/utils";
 import { zodToJsonSchema } from "zod-to-json-schema";
 
 import { User } from "@/server/user/decorators/user.decorator";
+
+// TODO: MASOOD
+import {
+  JsonResume,
+  JsonResumeParser,
+} from "@reactive-resume/parser";
 
 import { OptionalGuard } from "../auth/guards/optional.guard";
 import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
@@ -28,13 +37,63 @@ import { Resume } from "./decorators/resume.decorator";
 import { ResumeGuard } from "./guards/resume.guard";
 import { ResumeService } from "./resume.service";
 
+// TODO: MASOOD
+import { AuthService } from "../auth/auth.service";
+import { UserService } from "../user/user.service";
+
 @ApiTags("Resume")
 @Controller("resume")
 export class ResumeController {
   constructor(
+    private readonly authService: AuthService, // TODO: MASOOD
     private readonly resumeService: ResumeService,
+    private readonly userService: UserService, // TODO: MASOOD
     private readonly utils: UtilsService,
-  ) {}
+  ) { }
+
+  // TODO: MASOOD
+  @Post("validate")
+  async validate(
+    @Body() dto: any
+  ) {
+    try {
+      const parser = new JsonResumeParser();
+      parser.validate(dto);
+      return;
+    } catch (error) {
+      return JSON.parse(error.toString());
+    }
+  }
+
+  // TODO: MASOOD
+  @Post("push/:id")
+  async push(
+    @Param("id") id: string,
+    @Body() dto: any
+  ) {
+    const registerDto: RegisterDto = {
+      email: `${id}@ai-bridge.de`,
+      locale: "en-US",
+      name: `Name ${id}`,
+      password: `password${id}`,
+      username: `username${id}`,
+    };
+
+    const user = await this.authService.register(registerDto);
+
+    await this.userService.updateByEmail(user.email, {
+      emailVerified: true,
+      secrets: { update: { verificationToken: null } },
+    });
+
+    const parser = new JsonResumeParser();
+
+    const data = parser.convert(dto as JsonResume);
+
+    const resume = await this.resumeService.import(user.id, { data });
+
+    return { preview: `/autologin/${user.id}/${resume.id}` };
+  }
 
   @Get("schema")
   getSchema() {
