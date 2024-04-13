@@ -22,6 +22,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   # Storage (for image uploads)
   minio:
@@ -38,6 +40,8 @@ services:
       MINIO_CONSOLE_ADDRESS: :9001
       MINIO_ROOT_USER: ${STORAGE_ACCESS_KEY:-minioadmin}
       MINIO_ROOT_PASSWORD: ${STORAGE_SECRET_KEY:-minioadmin}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   # Chrome Browser (for printing and previews)
   chrome:
@@ -51,7 +55,8 @@ services:
       TOKEN: ${CHROME_TOKEN:-chrome_token}
       EXIT_ON_HEALTH_FAILURE: true
       PRE_REQUEST_HEALTH_CHECK: true
-
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
   # Redis (for cache & server session management)
   redis:
     image: redis:alpine
@@ -61,8 +66,11 @@ services:
       - ${REDIS_PORT:-6379}:6379
     volumes:
       - redis_data:/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
 volumes:
   minio_data:
   redis_data:
   postgres_data:
+

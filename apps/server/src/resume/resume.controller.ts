@@ -9,6 +9,7 @@ import {
   Param,
   Patch,
   Post,
+  Res,
   UseGuards,
 } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
@@ -92,7 +93,24 @@ export class ResumeController {
 
     const resume = await this.resumeService.import(user.id, { data });
 
-    return { preview: `/autologin/${user.id}/${resume.id}` };
+    return {
+      download: `api/resume/autodownload/${user.id}/${resume.id}`,
+      preview: `/autologin/${user.id}/${resume.id}`
+    };
+  }
+
+  // TODO: MASOOD
+  @Get("autodownload/:userId/:resumeId")
+  async autodownload(
+    @Param("userId") userId: string,
+    @Param("resumeId") resumeId: string,
+    @Res({ passthrough: true }) response: Response
+  ) {
+    const resume = await this.resumeService.findOne(resumeId, userId) as any;
+
+    const url = await this.resumeService.printResume(resume, userId);
+
+    (response as any).redirect(url);
   }
 
   @Get("schema")
