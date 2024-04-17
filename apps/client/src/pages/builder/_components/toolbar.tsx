@@ -11,6 +11,7 @@ import {
   LinkSimple,
   MagnifyingGlassMinus,
   MagnifyingGlassPlus,
+  PaperPlaneRight
 } from "@phosphor-icons/react";
 import { Button, Separator, Toggle, Tooltip } from "@reactive-resume/ui";
 import { motion } from "framer-motion";
@@ -19,6 +20,8 @@ import { useToast } from "@/client/hooks/use-toast";
 import { usePrintResume } from "@/client/services/resume";
 import { useBuilderStore } from "@/client/stores/builder";
 import { useResumeStore, useTemporalResumeStore } from "@/client/stores/resume";
+import { useState } from "react";
+import { CONFIG } from "@/client/config";
 
 export const BuilderToolbar = () => {
   const { toast } = useToast();
@@ -32,6 +35,9 @@ export const BuilderToolbar = () => {
   const pageOptions = useResumeStore((state) => state.resume.data.metadata.page.options);
 
   const { printResume, loading } = usePrintResume();
+
+  // TODO: MASOOD
+  const [sending, setSending] = useState(false);
 
   const onPrint = async () => {
     const { url } = await printResume({ id });
@@ -152,6 +158,27 @@ export const BuilderToolbar = () => {
             {loading ? <CircleNotch className="animate-spin" /> : <FilePdf />}
           </Button>
         </Tooltip>
+
+        <Separator orientation="vertical" className="h-9" />
+
+        <Button
+          size="icon"
+          variant="ghost"
+          onClick={() => {
+            setSending(true);
+            fetch(CONFIG.CALLBACK_URL as string)
+              .then(() => { })
+              .catch(() => { })
+              .finally(() => {
+                setSending(false);
+              })
+          }}
+          disabled={sending}
+          className="rounded-none"
+          style={{ color: '#dc2626' }}
+        >
+          {sending ? <CircleNotch className="animate-spin" /> : <PaperPlaneRight />}
+        </Button>
       </div>
     </motion.div>
   );
