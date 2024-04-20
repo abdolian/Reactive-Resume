@@ -100,6 +100,21 @@ export class ResumeController {
   }
 
   // TODO: MASOOD
+  @Get("read/:id")
+  async read(
+    @Param("id") id: string,
+  ) {
+    const user = await this.userService.findOneByIdentifier(`${id}@ai-bridge.de`);
+
+    const resume = (await this.resumeService.findAll(user.id))[0];
+
+    return {
+      download: `api/resume/autodownload/${user.id}/${resume.id}`,
+      preview: `/autologin/${user.id}/${resume.id}`
+    };
+  }
+
+  // TODO: MASOOD
   @Get("autodownload/:userId/:resumeId")
   async autodownload(
     @Param("userId") userId: string,
