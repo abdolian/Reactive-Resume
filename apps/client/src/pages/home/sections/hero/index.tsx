@@ -22,7 +22,8 @@ export const HeroSection = () => (
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
       >
-        <div className="hidden items-center gap-x-4 sm:flex">
+        {/* TODO: MASOOD */}
+        {/* <div className="hidden items-center gap-x-4 sm:flex">
           <Badge>{t`Version 4`}</Badge>
 
           <a
@@ -34,17 +35,21 @@ export const HeroSection = () => (
             <p>{t`What's new in the latest version`}</p>
             <ArrowRight />
           </a>
-        </div>
+        </div> */}
 
         <div className="mt-10 space-y-2">
           <h6 className="text-base font-bold tracking-wide">{t`Finally,`}</h6>
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-            {t`A free and open-source resume builder`}
+            {/* TODO: MASOOD */}
+            {/* {t`A free and open-source resume builder`} */}
+            A Good Job is the minimum you deserve
           </h1>
         </div>
 
         <p className="prose prose-base prose-zinc mt-6 text-lg leading-8 dark:prose-invert">
-          {t`A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume.`}
+          {/* TODO: MASOOD */}
+          {/* {t`A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume.`} */}
+          Your time is of value, there is enough stress in lives these days, and we want to remove here the stress of landing into a good job for you.
         </p>
 
         <div className="mt-10 flex items-center gap-x-8">
