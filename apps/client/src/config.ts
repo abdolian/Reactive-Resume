@@ -1,4 +1,4 @@
 // TODO: ALI
 export const CONFIG = {
-  CALLBACK_URL: 'http://localhost:0000',
+  CALLBACK_URL: 'http://server.followupai.org/callback',
 }

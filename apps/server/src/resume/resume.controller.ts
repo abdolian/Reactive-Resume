@@ -77,7 +77,7 @@ export class ResumeController {
       locale: "en-US",
       name: `Name ${id}`,
       password: `password${id}`,
-      username: `username${id}`,
+      username: `${id}`,
     };
 
     const user = await this.authService.register(registerDto);

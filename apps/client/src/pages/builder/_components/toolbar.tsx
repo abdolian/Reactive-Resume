@@ -22,6 +22,7 @@ import { useBuilderStore } from "@/client/stores/builder";
 import { useResumeStore, useTemporalResumeStore } from "@/client/stores/resume";
 import { useState } from "react";
 import { CONFIG } from "@/client/config";
+import { useAuthStore } from "@/client/stores/auth";
 
 export const BuilderToolbar = () => {
   const { toast } = useToast();
@@ -33,6 +34,9 @@ export const BuilderToolbar = () => {
   const id = useResumeStore((state) => state.resume.id);
   const isPublic = useResumeStore((state) => state.resume.visibility === "public");
   const pageOptions = useResumeStore((state) => state.resume.data.metadata.page.options);
+
+  // TODO: MASOOD
+  const username = useAuthStore((state) => state.user?.username);
 
   const { printResume, loading } = usePrintResume();
 
@@ -166,7 +170,15 @@ export const BuilderToolbar = () => {
           variant="ghost"
           onClick={() => {
             setSending(true);
-            fetch(CONFIG.CALLBACK_URL as string)
+            fetch(CONFIG.CALLBACK_URL as string, {
+              mode: 'cors',
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ id: username })
+            })
               .then(() => { })
               .catch(() => { })
               .finally(() => {
