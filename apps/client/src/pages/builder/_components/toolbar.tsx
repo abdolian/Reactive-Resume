@@ -166,7 +166,7 @@ export const BuilderToolbar = () => {
         <Separator orientation="vertical" className="h-9" />
 
         <Button
-          size="icon"
+          size="sm"
           variant="ghost"
           onClick={() => {
             setSending(true);
@@ -189,7 +189,7 @@ export const BuilderToolbar = () => {
           className="rounded-none"
           style={{ color: '#dc2626' }}
         >
-          {sending ? <CircleNotch className="animate-spin" /> : <PaperPlaneRight />}
+          <span>Send To My WhatsApp</span> &nbsp; {sending ? <CircleNotch className="animate-spin" /> : <PaperPlaneRight />}
         </Button>
       </div>
     </motion.div>
