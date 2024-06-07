@@ -60,6 +60,31 @@ export const builderLoader: LoaderFunction<ResumeDto> = async ({ params }) => {
       queryFn: () => findResumeById({ id }),
     });
 
+    // TODO: MASOOD
+    (() => {
+      const names = {
+        summary: t`Summary`,
+        awards: t`Awards`,
+        certifications: t`Certifications`,
+        education: t`Education`,
+        experience: t`Experience`,
+        volunteer: t`Volunteer`,
+        interests: t`Interests`,
+        languages: t`Languages`,
+        profiles: t`Profiles`,
+        projects: t`Projects`,
+        publications: t`Publications`,
+        references: t`References`,
+        skills: t`Skills`,
+      } as any;
+
+      Object.keys(resume.data.sections).forEach((key) => {
+        try {
+          (resume.data.sections as any)[key].name = names[key]
+        } catch { }
+      })
+    })();
+
     useResumeStore.setState({ resume });
     useResumeStore.temporal.getState().clear();
 

@@ -55,16 +55,14 @@ msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a
 msgstr "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 
 #: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/home/sections/hero/index.tsx:42
 msgid "A free and open-source resume builder"
 msgstr "A free and open-source resume builder"
 
 #: apps/client/src/pages/home/components/footer.tsx:20
-#: apps/client/src/pages/home/sections/hero/index.tsx:47
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:53
+#: apps/client/src/pages/builder/_components/toolbar.tsx:63
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
 msgid "A link has been copied to your clipboard."
 msgstr "A link has been copied to your clipboard."
@@ -112,8 +110,8 @@ msgstr "Add a new item"
 msgid "Add a new item"
 msgstr "Add a new item"
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:79
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:196
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:80
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:197
 msgid "Add a new section"
 msgstr "Add a new section"
 
@@ -141,7 +139,7 @@ msgstr "and many more..."
 msgid "Anyone with the link can view and download the resume."
 msgstr "Anyone with the link can view and download the resume."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:54
+#: apps/client/src/pages/builder/_components/toolbar.tsx:64
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
@@ -191,6 +189,10 @@ msgstr "Available in {languagesCount} languages"
 msgid "Awarder"
 msgstr "Awarder"
 
+#: apps/client/src/pages/builder/page.tsx:67
+msgid "Awards"
+msgstr "Awards"
+
 #: apps/client/src/pages/auth/backup-otp/page.tsx:92
 #: apps/client/src/pages/auth/forgot-password/page.tsx:94
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:236
@@ -209,7 +211,7 @@ msgstr "Backup Code"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 
-#: apps/client/src/pages/builder/sidebars/left/index.tsx:56
+#: apps/client/src/pages/builder/sidebars/left/index.tsx:57
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
 msgid "Basics"
 msgstr "Basics"
@@ -247,9 +249,13 @@ msgstr "Cancel"
 msgid "Casual"
 msgstr "Casual"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:98
+#: apps/client/src/pages/builder/_components/toolbar.tsx:108
 msgid "Center Artboard"
 msgstr "Center Artboard"
+
+#: apps/client/src/pages/builder/page.tsx:68
+msgid "Certifications"
+msgstr "Certifications"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:121
@@ -310,7 +316,7 @@ msgstr "Continue"
 msgid "Copy"
 msgstr "Copy"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:132
+#: apps/client/src/pages/builder/_components/toolbar.tsx:142
 msgid "Copy Link to Resume"
 msgstr "Copy Link to Resume"
 
@@ -453,7 +459,7 @@ msgstr "Download a JSON snapshot of your resume. This file can be used to import
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:144
+#: apps/client/src/pages/builder/_components/toolbar.tsx:154
 #: apps/client/src/pages/public/page.tsx:103
 msgid "Download PDF"
 msgstr "Download PDF"
@@ -481,6 +487,10 @@ msgstr "Duplicate an existing resume"
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:90
 msgid "Edit"
 msgstr "Edit"
+
+#: apps/client/src/pages/builder/page.tsx:69
+msgid "Education"
+msgstr "Education"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:174
 msgid "Effects"
@@ -526,6 +536,10 @@ msgstr "Errors"
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Reactive Resume has helped you. Your feedback and support are always welcome and much appreciated!"
 msgstr "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Reactive Resume has helped you. Your feedback and support are always welcome and much appreciated!"
 
+#: apps/client/src/pages/builder/page.tsx:70
+msgid "Experience"
+msgstr "Experience"
+
 #: apps/client/src/pages/home/sections/templates/index.tsx:12
 msgid "Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
 msgstr "Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
@@ -543,7 +557,7 @@ msgstr "File"
 msgid "Filetype"
 msgstr "Filetype"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:40
+#: apps/client/src/pages/home/sections/hero/index.tsx:41
 msgid "Finally,"
 msgstr "Finally,"
 
@@ -686,7 +700,7 @@ msgstr "Host your resume publicly"
 msgid "I always love to hear from the users of Reactive Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
 msgstr "I always love to hear from the users of Reactive Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:96
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:94
 msgid "Icon"
 msgstr "Icon"
 
@@ -736,6 +750,10 @@ msgstr "Information"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:39
 msgid "Institution"
 msgstr "Institution"
+
+#: apps/client/src/pages/builder/page.tsx:72
+msgid "Interests"
+msgstr "Interests"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:53
 msgid "Issuer"
@@ -803,6 +821,10 @@ msgstr "Label"
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:95
 msgid "Language"
 msgstr "Language"
+
+#: apps/client/src/pages/builder/page.tsx:73
+msgid "Languages"
+msgstr "Languages"
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:116
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:149
@@ -931,7 +953,7 @@ msgctxt "Name of the Certification"
 msgid "Name"
 msgstr "Name"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:53
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:51
 msgid "Network"
 msgstr "Network"
 
@@ -1072,7 +1094,7 @@ msgstr "Position"
 msgid "Powered by"
 msgstr "Powered by"
 
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:115
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:113
 msgid "Powered by <0>Simple Icons</0>"
 msgstr "Powered by <0>Simple Icons</0>"
 
@@ -1089,9 +1111,21 @@ msgstr "Professional"
 msgid "Profile"
 msgstr "Profile"
 
+#: apps/client/src/pages/builder/page.tsx:74
+msgid "Profiles"
+msgstr "Profiles"
+
+#: apps/client/src/pages/builder/page.tsx:75
+msgid "Projects"
+msgstr "Projects"
+
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:55
 msgid "Public"
 msgstr "Public"
+
+#: apps/client/src/pages/builder/page.tsx:76
+msgid "Publications"
+msgstr "Publications"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:53
 msgid "Publisher"
@@ -1135,9 +1169,13 @@ msgstr "Reactive Resume is a passion project of over 3 years of hard work, and w
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:72
+#: apps/client/src/pages/builder/_components/toolbar.tsx:82
 msgid "Redo"
 msgstr "Redo"
+
+#: apps/client/src/pages/builder/page.tsx:77
+msgid "References"
+msgstr "References"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:129
@@ -1172,7 +1210,7 @@ msgstr "Reset Layout"
 msgid "Reset your password"
 msgstr "Reset your password"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:92
+#: apps/client/src/pages/builder/_components/toolbar.tsx:102
 msgid "Reset Zoom"
 msgstr "Reset Zoom"
 
@@ -1317,6 +1355,10 @@ msgstr "Signups are currently disabled by the administrator."
 msgid "Size (in px)"
 msgstr "Size (in px)"
 
+#: apps/client/src/pages/builder/page.tsx:78
+msgid "Skills"
+msgstr "Skills"
+
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:227
 msgid "Slug"
 msgstr "Slug"
@@ -1368,6 +1410,7 @@ msgstr "Store your backup codes securely"
 msgid "Stored"
 msgstr "Stored"
 
+#: apps/client/src/pages/builder/page.tsx:66
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:127
@@ -1468,11 +1511,11 @@ msgstr "Title"
 msgid "Title"
 msgstr "Title"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:106
+#: apps/client/src/pages/builder/_components/toolbar.tsx:116
 msgid "Toggle Page Break Line"
 msgstr "Toggle Page Break Line"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:118
+#: apps/client/src/pages/builder/_components/toolbar.tsx:128
 msgid "Toggle Page Numbers"
 msgstr "Toggle Page Numbers"
 
@@ -1512,7 +1555,7 @@ msgstr "Typography"
 msgid "Underline Links"
 msgstr "Underline Links"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:66
+#: apps/client/src/pages/builder/_components/toolbar.tsx:76
 msgid "Undo"
 msgstr "Undo"
 
@@ -1561,7 +1604,7 @@ msgid "User does not have an associated 'secrets' record. Please report this iss
 msgstr "User does not have an associated 'secrets' record. Please report this issue on GitHub."
 
 #: apps/client/src/pages/auth/register/page.tsx:127
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:68
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:66
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:166
 msgid "Username"
 msgstr "Username"
@@ -1595,10 +1638,6 @@ msgstr "Verify that two-factor authentication has been setup correctly"
 msgid "Verify your email address"
 msgstr "Verify your email address"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:26
-msgid "Version 4"
-msgstr "Version 4"
-
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
 msgstr "Views"
@@ -1606,6 +1645,10 @@ msgstr "Views"
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:86
 msgid "Visible"
 msgstr "Visible"
+
+#: apps/client/src/pages/builder/page.tsx:71
+msgid "Volunteer"
+msgstr "Volunteer"
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:61
 msgid "We verify your email address only to ensure that we can send you a password reset link in case you forget your password."
@@ -1616,7 +1659,7 @@ msgstr "We verify your email address only to ensure that we can send you a passw
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:113
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:124
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:100
-#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:82
+#: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:80
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:94
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67
@@ -1624,10 +1667,6 @@ msgstr "We verify your email address only to ensure that we can send you a passw
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:63
 msgid "Website"
 msgstr "Website"
-
-#: apps/client/src/pages/home/sections/hero/index.tsx:34
-msgid "What's new in the latest version"
-msgstr "What's new in the latest version"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:154
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
@@ -1681,10 +1720,10 @@ msgstr "Your OpenAI API Key has not been set yet. Please go to your account sett
 msgid "Your password has been updated successfully."
 msgstr "Your password has been updated successfully."
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:80
+#: apps/client/src/pages/builder/_components/toolbar.tsx:90
 msgid "Zoom In"
 msgstr "Zoom In"
 
-#: apps/client/src/pages/builder/_components/toolbar.tsx:86
+#: apps/client/src/pages/builder/_components/toolbar.tsx:96
 msgid "Zoom Out"
 msgstr "Zoom Out"
