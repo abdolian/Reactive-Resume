@@ -79,6 +79,7 @@ export const builderLoader: LoaderFunction<ResumeDto> = async ({ params }) => {
       } as any;
 
       Object.keys(resume.data.sections).forEach((key) => {
+        if (key == 'custom') return;
         try {
           (resume.data.sections as any)[key].name = names[key]
         } catch { }
